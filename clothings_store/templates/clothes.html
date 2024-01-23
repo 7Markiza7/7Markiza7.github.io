@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Товары{% endblock %}
+
+{% block main %}
+    <div class="items">
+        {% for c in cards %}
+            <a href="/card/{{c.id}}" class="item">
+                <img src="/static/img/clothes/{{c.img}}" alt="" class="img">
+                <div class="description">
+                    <p class="text">{{c.name}}</p>
+                    <p class="price">{{c.price}} руб.</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
